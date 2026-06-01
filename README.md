@@ -4,9 +4,9 @@ Multimodal sarcasm detection on the MUStARD++ dataset using Data2Vec embeddings 
 
 ## Overview
 
-This project reproduces and extends MUStARD++'s sarcasm detection approach by replacing its original feature extractors with [Data2Vec](https://arxiv.org/abs/2202.01855) models across all three modalities — text, audio, and video. The classifier uses a collaborative cross-modal attention mechanism to fuse utterance and context representations before making a binary sarcasm prediction. This project is done originally in 2024 in fulfillment of U Antwerp's M.A. in Digital Text Analysis and reworked for clarity in 2026.
+This project reproduces and extends MUStARD++'s sarcasm detection approach by replacing its original feature extractors with [Data2Vec](https://arxiv.org/abs/2202.01855) models across all three modalities — text, audio, and video. The classifier uses a collaborative cross-modal attention mechanism to fuse utterance and context representations before making a binary sarcasm prediction. This project is finished originally in 2024 in fulfillment of U Antwerp's M.A. in Digital Text Analysis and reworked for clarity in 2026.
 
-The full pipeline runs end-to-end via a single Snakemake command.
+The full pipeline can be ran end-to-end via a single Snakemake command.
 
 ## Pipeline
 
