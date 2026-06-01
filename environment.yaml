@@ -1,0 +1,24 @@
+name: mustard_sarcasm
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch
+  - torchvision
+  - pytorch-cuda=11.8   # remove this line for CPU-only installation
+  - numpy
+  - pandas
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - pillow
+  - librosa
+  - opencv
+  - snakemake-minimal
+  - pip
+  - graphviz
+  - pip:
+    - transformers
+    - katna

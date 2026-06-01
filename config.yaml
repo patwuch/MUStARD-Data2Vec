@@ -1,0 +1,53 @@
+paths:
+  csv_file: data/mustardtext.csv
+
+  # Raw video folders (pre-Katna — source)
+  utterance_videos_raw: data/final_utterance_videos_0
+  context_videos_raw: data/final_context_videos_0
+
+  # Katna outputs
+  utterance_keyframes: data/final_all_keyframes/final_utterance_keyframes
+  context_keyframes: data/final_all_keyframes/final_context_keyframes
+
+  # Videos that Katna failed on — moved here for direct frame extraction
+  utterance_videos_fallback: data/final_utterance_videos_1
+  context_videos_fallback: data/final_context_videos_1
+
+  # Audio files
+  utterance_audios: data/final_utterance_audios
+  context_audios: data/final_context_audios
+
+  # Intermediate artifacts
+  features_pkl: data/features.pkl
+  dataset_pkl: data/dataset.pkl
+  folds_dir: data/folds
+
+  # Results
+  best_params: results/best_params.json
+  results_dir: results
+
+gpu: 0             # GPU index to use; set to -1 to force CPU
+
+training:
+  mode: VTA        # modality combination: V, T, A, VT, VA, TA, or VTA
+  speaker: true
+  context: true
+  epochs: 500
+  patience: 5
+  # Best hyperparameters from search (overwritten by best_params.json at runtime)
+  dropout: 0.2
+  lr: 0.001
+  batch_size: 64
+  shared_emb_size: 2048
+  proj_emb_size: 256
+  n_folds: 5
+  val_size: 200    # samples held out from training folds for early stopping
+
+hyperparameter_search:
+  n_samples: 450           # balanced sample size (225 sarcastic + 225 non-sarcastic)
+  train_fraction: 0.67     # fraction of sample used for train (rest = val)
+  dropout_values: [0.2, 0.3, 0.4]
+  lr_values: [0.001, 0.0001]
+  batch_size_values: [32, 64, 128]
+  shared_emb_values: [2048, 1024]
+  proj_emb_values: [1024, 256]

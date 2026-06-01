@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule extract_features in file "/home/patwuch/Documents/projects/mustard_sarcasm/Snakefile", line 65:
+Missing input files for rule extract_features:
+    output: data/features.pkl
+    affected files:
+        data/mustardtext.csv

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule extract_keyframes in file "/home/patwuch/Documents/projects/mustard_sarcasm/Snakefile", line 55:
+Missing input files for rule extract_keyframes:
+    output: data/.keyframes_done
+    affected files:
+        data/final_context_videos_0
+        data/final_utterance_videos_0
